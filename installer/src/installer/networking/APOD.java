@@ -1,4 +1,4 @@
-package installer;
+package installer.networking;
 
 import java.util.List;
 

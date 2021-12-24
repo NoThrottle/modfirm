@@ -21,6 +21,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+import installer.networking.HttpRequestLiveTest;
 import net.harawata.appdirs.AppDirs;
 import net.harawata.appdirs.AppDirsFactory;
 

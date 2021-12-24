@@ -1,4 +1,4 @@
-package installer;
+package installer.networking;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import okhttp3.OkHttpClient;
