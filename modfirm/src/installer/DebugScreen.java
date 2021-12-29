@@ -74,6 +74,22 @@ public class DebugScreen {
 		btnOpenLogsFolder.setText("Open Logs Folder");
 		
 		Button btnOpenModsFolder = new Button(shlDebug, SWT.NONE);
+		btnOpenModsFolder.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseDown(MouseEvent e) {
+				try {
+					java.awt.Desktop.getDesktop().open(UpdateManager.GetClientModPath("mods").toFile());
+				} catch (IOException e1) {
+					e1.printStackTrace();
+					try {
+						java.awt.Desktop.getDesktop().open(UpdateManager.GetClientModPath(".mc").toFile());
+					} catch (IOException e2) {
+						e2.printStackTrace();
+						//incorrect directory or you simply dont have minecraft
+					}
+				}
+			}
+		});
 		btnOpenModsFolder.setBounds(298, 226, 105, 25);
 		btnOpenModsFolder.setText("Open Mods Folder");
 		
