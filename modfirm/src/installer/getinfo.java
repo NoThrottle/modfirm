@@ -17,8 +17,8 @@ public class getinfo {
 	
 	
 	/**
-	 * Returns a value from datavalues.yaml
-	 * Possible returns:
+	 * @apiNote Returns a value from datavalues.yaml
+	 * @param Possible returns:
 	 * _apiKey
 	 * _sheetID
 	 * _versionOld_coded
@@ -27,7 +27,11 @@ public class getinfo {
 	 * _versionNew_readable
 	 * _changelog
 	 * _modsListRange
-	 * _hashListColumn 
+	 * _hashListRange 
+	 * _downListRange
+	 * _modsListCell
+	 * _hashListCell
+	 * _downListCell
 	 */
 	public static String Info(String type) {
 		
@@ -56,25 +60,37 @@ public class getinfo {
 				toreturn = ParseConfig.getSheetID();
 				break;
 			case "_versionOld_coded":
-				toreturn = "hello";
+				toreturn = ParseConfig.getVersionOld_coded();
 				break;
 			case "_versionOld_readable":
-				toreturn = "hello";
+				toreturn = ParseConfig.getVersionOld_readable();
 				break;
 			case "_versionNew_coded":
-				toreturn = "hello";
+				toreturn = ParseConfig.getVersionNew_coded();
+				break;
+			case "_versionNew_readable":
+				toreturn = ParseConfig.getVersionNew_readable();
 				break;
 			case "_changelog":
-				toreturn = "hello";
+				toreturn = ParseConfig.getChangelog();
 				break;
 			case "_modsListRange":
-				toreturn = "hello";
+				toreturn = ParseConfig.getModsListRange();
 				break;
-			case "_hashListColumn":
-				toreturn = "hello";
+			case "_hashListRange":
+				toreturn = ParseConfig.getHashListRange();
+				break;
+			case "_modsListCell":
+				toreturn = ParseConfig.getModsListCell();
+				break;
+			case "_hashListCell":
+				toreturn = ParseConfig.getHashListCell();
+				break;
+			case "_downListCell":
+				toreturn = ParseConfig.getDownListCell();
 				break;
 			default:
-				toreturn = "?";
+				toreturn = "Invalid Info Request";
 		
 		}
 		

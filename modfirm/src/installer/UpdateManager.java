@@ -150,25 +150,24 @@ public class UpdateManager {
 		
 		if (type == "readable") { //returns v1 for Patch 01
 			try {
-				version = ValueFromSheet("F3:F3").toString();
+				version = ValueFromSheet(getinfo.Info("_versionNew_readable")).toString();
 				version = version.substring(2, version.length()-2);
 			} catch (IOException e) {
 				e.printStackTrace();
 				//logs
-				version = "Error";
+				version = "Error 23";
 			}
 		} else if (type == "coded") {//returns an integer(as string)
 			try {
-				version = ValueFromSheet("E3:E3").toString();
+				version = ValueFromSheet(getinfo.Info("_versionNew_coded")).toString();
 				version = version.substring(2, version.length()-2);
 			} catch (IOException e) {
 				e.printStackTrace();
 				//logs
-				version = "Error";
+				version = "Error 23";
 			}
 		}
 		
-
 		return version;	
 	}
 	
@@ -238,8 +237,8 @@ public class UpdateManager {
 	}
 	
 	//Complete (logs and debug)
-    private static String SPREADSHEET_ID = "1e7FJRyB1rG7yctlLHcqf3nP0-CN4aaMbN2x2oIjvZSM";
-	private static String APIKey = "AIzaSyAFGJFSJfQQn0FdtTkz63_KINBCTLQ_Ikg";
+    private static String SPREADSHEET_ID = getinfo.Info("_sheetID");
+	private static String APIKey = getinfo.Info("_apiKey");;
 	private static List ValueFromSheet(String range) throws IOException {
 		
 		List data = HttpRequestLiveTest.Request(SPREADSHEET_ID, range, APIKey);	

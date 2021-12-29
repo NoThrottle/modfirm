@@ -11,6 +11,11 @@ public class ParseConfig {
     private String versionNew_readable;
     private String changelog;
     private String modsListRange;
+    private String hashListRange;
+    private String downListRange;
+    private String modsListCell;
+    private String hashListCell;
+    private String downListCell;
 
     public ParseConfig() {
 
@@ -24,7 +29,12 @@ public class ParseConfig {
     		String versionNew_coded,
     		String versionNew_readable,
     		String changelog,
-    		String modsListRange
+    		String modsListRange,
+    		String hashListRange,
+    		String downListRange,
+    		String modsListCell,
+    		String hashListCell,
+    		String downListCell
     		) {
     	
         super();
@@ -36,6 +46,11 @@ public class ParseConfig {
         this.versionNew_readable = versionNew_readable;
         this.changelog = changelog;
         this.modsListRange = modsListRange;
+        this.hashListRange = hashListRange;
+        this.downListRange = downListRange;
+        this.modsListCell = modsListCell;
+        this.hashListCell = hashListCell;
+        this.downListCell = downListCell;
     }
 
     
@@ -72,7 +87,26 @@ public class ParseConfig {
     	return modsListRange;
     }
     
-
+    public String getHashListRange() {
+    	return hashListRange;
+    }
+    
+    public String getDownListRange() {
+    	return downListRange;
+    }
+    
+    public String getModsListCell() {
+    	return modsListCell;
+    }
+    
+    public String getHashListCell() {
+    	return hashListCell;
+    }
+    
+    public String getDownListCell() {
+    	return downListCell;
+    }
+    
     
     //IDK what this does
     @Override

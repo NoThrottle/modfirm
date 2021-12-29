@@ -17,8 +17,8 @@ sheetID: sheetid
 
 versionOld_coded:
 versionOld_readable:
-versionNew_coded:
-versionNew_readable:
+versionNew_coded: F3:F3
+versionNew_readable: E3:E3
 changelog:
 
 #Use this if you pay for the API
