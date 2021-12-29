@@ -238,8 +238,8 @@ public class UpdateManager {
 	}
 	
 	//Complete (logs and debug)
-    private static String SPREADSHEET_ID = "1e7FJRyB1rG7yctlLHcqf3nP0-CN4aaMbN2x2oIjvZSM";
-	private static String APIKey = "AIzaSyAFGJFSJfQQn0FdtTkz63_KINBCTLQ_Ikg";
+    private static String SPREADSHEET_ID = getinfo.Info("_sheetID");
+	private static String APIKey = getinfo.Info("_apiKey");;
 	private static List ValueFromSheet(String range) throws IOException {
 		
 		List data = HttpRequestLiveTest.Request(SPREADSHEET_ID, range, APIKey);	

@@ -17,8 +17,8 @@ public class getinfo {
 	
 	
 	/**
-	 * Returns a value from datavalues.yaml
-	 * Possible returns:
+	 * @apiNote Returns a value from datavalues.yaml
+	 * @param Possible returns:
 	 * _apiKey
 	 * _sheetID
 	 * _versionOld_coded
