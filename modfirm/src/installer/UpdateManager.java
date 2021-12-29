@@ -61,7 +61,7 @@ public class UpdateManager {
 	public static String Changelog() {
 		return GetChangelog();
 	}
-	
+
 	
 	
 	//Statics for mod updates
@@ -219,7 +219,8 @@ public class UpdateManager {
 	//------------PRIVATE RETURNS-------------
 	
 	//Complete
-	private static Path GetClientModPath(String what) {
+	//I know this should be private returns but im lazy.
+	public static Path GetClientModPath(String what) {
 		
 		AppDirs appDirs = AppDirsFactory.getInstance();
 		
