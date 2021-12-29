@@ -73,23 +73,20 @@ public class MainWindow {
 		shlHighskyModpackUpdate.open();
 		shlHighskyModpackUpdate.layout();
 		
-		//Do Updates Here
-	    lblFetchingVersion.setText(UpdateManager.ClientVersion("readable"));//after
-		lblGetNewVersion.setText(UpdateManager.ServerVersion("readable"));//after
-		changelogbox.setText(UpdateManager.Changelog());
-		
 		Button btnVerifyMods = new Button(shlHighskyModpackUpdate, SWT.NONE);
 		btnVerifyMods.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseDown(MouseEvent e) {
-				
-				
-				
+			public void mouseDown(MouseEvent e) {	
+				//on press verify
 			}
 		});
 		btnVerifyMods.setBounds(178, 226, 75, 25);
 		btnVerifyMods.setText("Verify Mods");
 		
+		//Do Updates Here
+	    lblFetchingVersion.setText(UpdateManager.ClientVersion("readable"));//after
+		lblGetNewVersion.setText(UpdateManager.ServerVersion("readable"));//after
+		changelogbox.setText(UpdateManager.Changelog());
 		
 		while (!shlHighskyModpackUpdate.isDisposed()) {
 			if (!display.readAndDispatch()) {
