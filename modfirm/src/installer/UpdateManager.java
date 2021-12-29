@@ -34,6 +34,7 @@ public class UpdateManager {
 
 		System.out.println(GetClientModPath(".mc"));
 		System.out.println(ClientVersion("readable"));
+		System.out.println(Changelog());
 		
 		
 	}
@@ -57,7 +58,9 @@ public class UpdateManager {
 		
 		return APIKey;
 	}
-	
+	public static String Changelog() {
+		return GetChangelog();
+	}
 	
 	
 	
@@ -118,6 +121,18 @@ public class UpdateManager {
 		return "Unknown Error";
 	}
 	
+	private static String GetChangelog() {
+		
+		String toreturn = null;
+		
+		try {
+			toreturn = ValueFromSheet(getinfo.Info("_changelog")).toString();
+			toreturn = toreturn.substring(2, toreturn.length()-2);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return toreturn;
+	}
 	
 //	private static Boolean VerifyCompleteMods() {
 //		

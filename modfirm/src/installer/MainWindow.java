@@ -24,7 +24,7 @@ public class MainWindow {
 
 	protected Shell shlHighskyModpackUpdate;
 	Runtime rt = Runtime.getRuntime();
-	private Text text;
+	private Text changelogbox;
 	
 
 	/**
@@ -76,6 +76,7 @@ public class MainWindow {
 		//Do Updates Here
 	    lblFetchingVersion.setText(UpdateManager.ClientVersion("readable"));//after
 		lblGetNewVersion.setText(UpdateManager.ServerVersion("readable"));//after
+		changelogbox.setText(UpdateManager.Changelog());
 		
 		Button btnVerifyMods = new Button(shlHighskyModpackUpdate, SWT.NONE);
 		btnVerifyMods.addMouseListener(new MouseAdapter() {
@@ -136,9 +137,10 @@ public class MainWindow {
 		btnDebug.setBounds(349, 226, 75, 25);
 		btnDebug.setText("Debug");
 		
-		text = new Text(shlHighskyModpackUpdate, SWT.BORDER | SWT.V_SCROLL);
-		text.setEditable(false);
-		text.setBounds(178, 31, 246, 189);
+		changelogbox = new Text(shlHighskyModpackUpdate, SWT.BORDER | SWT.WRAP | SWT.V_SCROLL | SWT.MULTI);
+		changelogbox.setText("Fetching Version...");
+		changelogbox.setEditable(false);
+		changelogbox.setBounds(178, 31, 246, 189);
 		
 		Label label = new Label(shlHighskyModpackUpdate, SWT.SEPARATOR | SWT.VERTICAL);
 		label.setBounds(168, 10, 2, 241);
