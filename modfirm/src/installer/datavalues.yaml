@@ -1,0 +1,24 @@
+#Default Order:
+#apiKey: apikey
+#sheetId: sheetid
+
+apiKey: apikey
+sheetID: sheetid
+
+#Hardcoding Sheet Values
+#Default Order:
+#versionOld_coded:
+#versionOld_readable:
+#versionNew_coded:
+#versionNew_readable:
+#changelog:
+#modsListRange:
+#hashListColumn:
+
+versionOld_coded:
+versionOld_readable:
+versionNew_coded:
+versionNew_readable:
+changelog:
+modsListRange:
+hashListColumn:
