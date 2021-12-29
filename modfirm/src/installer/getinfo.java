@@ -50,10 +50,10 @@ public class getinfo {
 
 		switch (type) {
 			case "_apiKey":
-				toreturn = "hello";
+				toreturn = ParseConfig.getApiKey();
 				break;
 			case "_sheetID":
-				toreturn = "hello";
+				toreturn = ParseConfig.getSheetID();
 				break;
 			case "_versionOld_coded":
 				toreturn = "hello";
@@ -73,6 +73,8 @@ public class getinfo {
 			case "_hashListColumn":
 				toreturn = "hello";
 				break;
+			default:
+				toreturn = "?";
 		
 		}
 		

@@ -20,5 +20,13 @@ versionOld_readable:
 versionNew_coded:
 versionNew_readable:
 changelog:
-modsListRange:
-hashListColumn:
+
+#Use this if you pay for the API
+#modsListRange:
+#hashListRange:
+#downListRange:
+#haven't implemented this yet
+#else, to limit api requests use:
+modsListCell:
+hashListCell:
+downListCell:
