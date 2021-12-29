@@ -19,11 +19,11 @@ I will prioritize getting everything set-up for my use case first before I attem
 
 Side Note: This program/mod does not aim to moderate the mods a user has upon joining a server. You can add that functionality yourself but that is not the goal of this project.
 
-**Beta Image of Client Updater**\
+**Beta Image of Client Updater**<br/>
 ![image](https://i.imgur.com/JSAY5Ab.png)
 
 **Progress**
-- Modfirm.jar: 50%
+- Modfirm.jar: 60%
 - Modfirm-versions.jar: 10% (no commit to here yet)
 - Modfirm-server.jar: 10% (no commit to here yet)
 
@@ -33,5 +33,6 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Please make sure to update tests as appropriate.
 
 ## License
-[GNU GPL 3.0](https://choosealicense.com/licenses/gpl-3.0/)\
+[GNU GPL 3.0](https://choosealicense.com/licenses/gpl-3.0/)<br/>
 Basically everything is open source except for the times it isn't.
+If you plan to modify this mod and re-release it, you must release it with the same license, or something more "open".

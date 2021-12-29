@@ -3,16 +3,26 @@ package installer;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
+
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Monitor;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.graphics.Cursor;
 import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.wb.swt.SWTResourceManager;
 import org.eclipse.swt.events.DisposeListener;
 import org.eclipse.swt.events.DisposeEvent;
+import org.eclipse.swt.events.MouseAdapter;
+import org.eclipse.swt.events.MouseEvent;
+import org.eclipse.swt.events.MouseTrackAdapter;
 
 public class DebugScreen {
 	protected Shell shlDebug;
@@ -88,6 +98,22 @@ public class DebugScreen {
 		lblVForx.setText("v1 for 1.18.x");
 		
 		Label lblVisitOnGithub = new Label(shlDebug, SWT.CENTER);
+		org.eclipse.swt.graphics.Cursor cursor = new Cursor(display, SWT.CURSOR_HAND);
+	    lblVisitOnGithub.setCursor(cursor);
+		lblVisitOnGithub.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseDown(MouseEvent e) {
+				
+		        Desktop desk = Desktop.getDesktop();
+		        try {
+					desk.browse(new URI("https://github.com/NoThrottle/modfirm"));
+					//Don't change this, please.
+				} catch (IOException | URISyntaxException e1) {
+					e1.printStackTrace();
+				}
+				
+			}
+		});
 		lblVisitOnGithub.setForeground(SWTResourceManager.getColor(SWT.COLOR_BLUE));
 		lblVisitOnGithub.setBounds(298, 137, 105, 15);
 		lblVisitOnGithub.setText("Visit on Github");
