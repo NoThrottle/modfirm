@@ -2,8 +2,8 @@
 #apiKey: apikey
 #sheetId: sheetid
 
-apiKey: apikey
-sheetID: sheetid
+apiKey: AIaaSyAFGJFSJfQQn0FdtTkz63_KINBCTLQ_Ikg
+sheetID: 1e8FJRyB1rG7yctlLHcqf3nP0-CN4aaMbN2x2oIjvZSM
 
 #Hardcoding Sheet Values
 #Default Order:
@@ -15,11 +15,14 @@ sheetID: sheetid
 #modsListRange:
 #hashListColumn:
 
+#You should never have to use this:
 versionOld_coded:
 versionOld_readable:
-versionNew_coded: F3:F3
-versionNew_readable: E3:E3
-changelog:
+#End of not being used.
+
+versionNew_coded: E3:E3
+versionNew_readable: F3:F3
+changelog: E4:E4
 
 #Use this if you pay for the API
 #modsListRange:
