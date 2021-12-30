@@ -151,9 +151,6 @@ public class UpdateManager {
 //	    	  //fetch missing mods list and ask the user if they want to update
 //	      }
 //	
-//	      
-//	      
-//	      
 //		return true;
 //		
 //	}
@@ -266,11 +263,7 @@ public class UpdateManager {
 	
 	private static List<String> GetServerModList() {
 		
-		String fileId = "0BwwA4oUTeiV1UVNwOHItT0xfa2M";
-		OutputStream outputStream = new ByteArrayOutputStream();
-//		driveService.files().get(fileId)
-//		    .executeMediaAndDownloadTo(outputStream);
-
+		
 		
 		
 		return null;
