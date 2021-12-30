@@ -134,7 +134,7 @@ public class MainWindow {
 		btnDebug.setText("Debug");
 		
 		changelogbox = new Text(shlHighskyModpackUpdate, SWT.BORDER | SWT.WRAP | SWT.V_SCROLL | SWT.MULTI);
-		changelogbox.setText("Fetching Version...");
+		changelogbox.setText("Fetching Changelog...");
 		changelogbox.setEditable(false);
 		changelogbox.setBounds(178, 31, 246, 189);
 		
