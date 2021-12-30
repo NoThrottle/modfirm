@@ -6,6 +6,7 @@ Keep your players updated to the latest mods for your server automatically!
 - Modfirm.jar: Separate java instance application that handles the version checking,  mods verification, and Debugging.
 - Modfirm-versions.jar: Fabric/Forge mod that contacts the server for its version and doesn't let the player join if there is any mismatch.
 - Modfirm-server.jar: Fabric/Forge mod that requires the client to have modfirm-versions.jar installed and responds to version requests.
+- Modfirm-helper.jar: Separate application that may help you obtain your mods list and each mod's SHA256 hash.
 
 **Other things you need**
 1. Google Sheets API Key: For public access to your...
@@ -26,6 +27,7 @@ Side Note: This program/mod does not aim to moderate the mods a user has upon jo
 - Modfirm.jar: 60%
 - Modfirm-versions.jar: 10% (no commit to here yet)
 - Modfirm-server.jar: 10% (no commit to here yet)
+- Modfirm-helper.jer: 80%
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
