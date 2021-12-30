@@ -46,6 +46,8 @@ public class MainWindow {
 	 * Open the window.
 	 */
 	
+    Label lblFetchingVersion = null;
+    Label lblGetNewVersion = null;
 	
 	public void open() {
 		Display display = Display.getDefault();
@@ -59,15 +61,6 @@ public class MainWindow {
 	    int y = bounds.y + (bounds.height - rect.height) / 2;
 	    shlHighskyModpackUpdate.setLocation(x, y);
 	    
-	    Label lblFetchingVersion = new Label(shlHighskyModpackUpdate, SWT.NONE);
-	    lblFetchingVersion.setText("Fetching Version...");//before
-	    lblFetchingVersion.setAlignment(SWT.CENTER);
-	    lblFetchingVersion.setBounds(27, 137, 117, 15);
-	    
-	    Label lblGetNewVersion = new Label(shlHighskyModpackUpdate, SWT.NONE);
-	    lblGetNewVersion.setText("Fetching Version...");//before
-	    lblGetNewVersion.setAlignment(SWT.CENTER);
-	    lblGetNewVersion.setBounds(27, 182, 117, 15);
 
 	    //Launch
 		shlHighskyModpackUpdate.open();
@@ -82,11 +75,12 @@ public class MainWindow {
 		});
 		btnVerifyMods.setBounds(178, 226, 75, 25);
 		btnVerifyMods.setText("Verify Mods");
-		
+				
 		//Do Updates Here
 	    lblFetchingVersion.setText(UpdateManager.ClientVersion("readable"));//after
 		lblGetNewVersion.setText(UpdateManager.ServerVersion("readable"));//after
 		changelogbox.setText(UpdateManager.Changelog());
+		
 		
 		while (!shlHighskyModpackUpdate.isDisposed()) {
 			if (!display.readAndDispatch()) {
@@ -98,7 +92,7 @@ public class MainWindow {
 	/**
 	 * Create contents of the window.
 	 */
-	protected void createContents() {
+	public void createContents() {
 		shlHighskyModpackUpdate = new Shell( SWT.CLOSE | SWT.TITLE | SWT.MIN );
 		shlHighskyModpackUpdate.addDisposeListener(new DisposeListener() {
 			public void widgetDisposed(DisposeEvent e) {
@@ -106,9 +100,14 @@ public class MainWindow {
 			}
 		});
 		
-		shlHighskyModpackUpdate.setVisible(true);
 		shlHighskyModpackUpdate.setSize(450, 300);
 		shlHighskyModpackUpdate.setText("HighSky Modpack Update");
+		
+		Label lblNewLabel = new Label(shlHighskyModpackUpdate, SWT.NONE);
+		lblNewLabel.setAlignment(SWT.CENTER);
+		lblNewLabel.setBounds(33, 10, 100, 100);
+		lblNewLabel.setImage(SWTResourceManager.getImage(MainWindow.class, "/installer/HSMC(1).png"));
+		lblNewLabel.setVisible(true);
 		
 		Label lblYourCurrentVersion = new Label(shlHighskyModpackUpdate, SWT.NONE);
 		lblYourCurrentVersion.setFont(SWTResourceManager.getFont("Segoe UI", 9, SWT.BOLD));
@@ -119,8 +118,8 @@ public class MainWindow {
 		Label lblNewestVersion = new Label(shlHighskyModpackUpdate, SWT.NONE);
 		lblNewestVersion.setFont(SWTResourceManager.getFont("Segoe UI", 9, SWT.BOLD));
 		lblNewestVersion.setAlignment(SWT.CENTER);
-		lblNewestVersion.setText("Newest Version:");
 		lblNewestVersion.setBounds(27, 161, 117, 15);
+		lblNewestVersion.setText("Newest Version:");
 		
 		Button btnDebug = new Button(shlHighskyModpackUpdate, SWT.NONE);
 		btnDebug.addMouseListener(new MouseAdapter() {
@@ -135,18 +134,12 @@ public class MainWindow {
 		btnDebug.setText("Debug");
 		
 		changelogbox = new Text(shlHighskyModpackUpdate, SWT.BORDER | SWT.WRAP | SWT.V_SCROLL | SWT.MULTI);
-		changelogbox.setText("Fetching Version...");
+		changelogbox.setText("Fetching Changelog...");
 		changelogbox.setEditable(false);
 		changelogbox.setBounds(178, 31, 246, 189);
 		
 		Label label = new Label(shlHighskyModpackUpdate, SWT.SEPARATOR | SWT.VERTICAL);
 		label.setBounds(168, 10, 2, 241);
-		
-		Label lblNewLabel = new Label(shlHighskyModpackUpdate, SWT.NONE);
-		lblNewLabel.setAlignment(SWT.CENTER);
-		lblNewLabel.setVisible(true);
-		lblNewLabel.setImage(SWTResourceManager.getImage(MainWindow.class, "/installer/HSMC(1).png"));
-		lblNewLabel.setBounds(33, 10, 100, 100);
 		
 		Button btnInstall = new Button(shlHighskyModpackUpdate, SWT.NONE);
 		btnInstall.setBounds(47, 226, 75, 25);
@@ -156,6 +149,17 @@ public class MainWindow {
 		lblNewLabel_1.setBounds(178, 10, 55, 15);
 		lblNewLabel_1.setText("Changes:");
 
+	    lblFetchingVersion = new Label(shlHighskyModpackUpdate, SWT.NONE);
+	    lblFetchingVersion.setAlignment(SWT.CENTER);
+	    lblFetchingVersion.setBounds(27, 137, 117, 15);
+	    lblFetchingVersion.setText("Fetching Version...");//before
+
+	    lblGetNewVersion = new Label(shlHighskyModpackUpdate, SWT.NONE);
+	    lblGetNewVersion.setAlignment(SWT.CENTER);
+	    lblGetNewVersion.setBounds(27, 182, 117, 15);
+	    lblGetNewVersion.setText("Fetching Version...");//before
+
+		shlHighskyModpackUpdate.setVisible(true);
 	}
 }
 
