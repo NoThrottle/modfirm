@@ -128,15 +128,15 @@ public class Window {
 		Label label = new Label(shlModfirmHelper, SWT.SEPARATOR | SWT.HORIZONTAL);
 		label.setBounds(10, 73, 414, 2);
 		
-		Label lblJ = new Label(shlModfirmHelper, SWT.NONE);
-		lblJ.setFont(SWTResourceManager.getFont("Bahnschrift", 25, SWT.BOLD));
-		lblJ.setBounds(45, 10, 144, 41);
-		lblJ.setText("MODFIRM");
-		
 		Label lblHelper = new Label(shlModfirmHelper, SWT.NONE);
 		lblHelper.setAlignment(SWT.CENTER);
 		lblHelper.setBounds(45, 45, 144, 15);
 		lblHelper.setText("Helper");
+		
+		Label lblJ = new Label(shlModfirmHelper, SWT.NONE);
+		lblJ.setFont(SWTResourceManager.getFont("Bahnschrift", 25, SWT.BOLD));
+		lblJ.setBounds(45, 10, 144, 41);
+		lblJ.setText("MODFIRM");
 		
 		Label label_1 = new Label(shlModfirmHelper, SWT.SEPARATOR | SWT.HORIZONTAL);
 		label_1.setBounds(10, 200, 414, 2);
