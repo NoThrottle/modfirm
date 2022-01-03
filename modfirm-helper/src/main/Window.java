@@ -9,7 +9,11 @@ import net.harawata.appdirs.AppDirsFactory;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.DirectoryDialog;
 
+import java.awt.Desktop;
 import java.io.File;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -122,7 +126,7 @@ public class Window {
 		btnBrowse2.setBounds(349, 159, 75, 25);
 		
 		Label lblGeneratesModsList = new Label(shlModfirmHelper, SWT.WRAP);
-		lblGeneratesModsList.setBounds(224, 31, 200, 36);
+		lblGeneratesModsList.setBounds(224, 21, 200, 30);
 		lblGeneratesModsList.setText("Generates Mods List and Hashes from a mods folder.");
 		
 		Label label = new Label(shlModfirmHelper, SWT.SEPARATOR | SWT.HORIZONTAL);
@@ -152,6 +156,23 @@ public class Window {
 		Button btnGenerateList = new Button(shlModfirmHelper, SWT.NONE);
 		btnGenerateList.setBounds(114, 213, 80, 25);
 		btnGenerateList.setText("Generate List");
+		
+		Label lblVisitOnGithub = new Label(shlModfirmHelper, SWT.NONE);
+		lblVisitOnGithub.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseDown(MouseEvent e) {
+		        Desktop desk = Desktop.getDesktop();
+		        try {
+					desk.browse(new URI("https://github.com/NoThrottle/modfirm"));
+					//Don't change this, please.
+				} catch (IOException | URISyntaxException e1) {
+					e1.printStackTrace();
+				}
+			}
+		});
+		lblVisitOnGithub.setForeground(SWTResourceManager.getColor(SWT.COLOR_BLUE));
+		lblVisitOnGithub.setBounds(224, 52, 103, 15);
+		lblVisitOnGithub.setText("Visit on Github.");
 
 	}
 
