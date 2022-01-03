@@ -27,7 +27,7 @@ Side Note: This program/mod does not aim to moderate the mods a user has upon jo
 - Modfirm.jar: 60%
 - Modfirm-versions.jar: 10% (no commit to here yet)
 - Modfirm-server.jar: 10% (no commit to here yet)
-- Modfirm-helper.jer: 80%
+- Modfirm-helper.jer: 85%
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
