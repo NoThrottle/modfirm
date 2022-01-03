@@ -22,13 +22,15 @@ import org.eclipse.swt.events.MouseAdapter;
 import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.events.SelectionAdapter;
-import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.widgets.Monitor;
+import org.eclipse.swt.graphics.Cursor;
+import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.wb.swt.SWTResourceManager;
 
 public class Window {
 
 	protected Shell shlModfirmHelper;
+	public static String retpath;
 	private Text text;
 
 	/**
@@ -50,6 +52,15 @@ public class Window {
 	public void open() {
 		Display display = Display.getDefault();
 		createContents();
+		
+		//Center the Window
+		Monitor primary = display.getPrimaryMonitor();
+	    Rectangle bounds = primary.getBounds();
+	    Rectangle rect = shlModfirmHelper.getBounds();
+	    int x = bounds.x + (bounds.width - rect.width) / 2;
+	    int y = bounds.y + (bounds.height - rect.height) / 2;
+	    shlModfirmHelper.setLocation(x, y);
+		
 		shlModfirmHelper.open();
 		shlModfirmHelper.layout();
 		while (!shlModfirmHelper.isDisposed()) {
@@ -84,6 +95,7 @@ public class Window {
 			    	modspath = GetClientModPath("mods").toString();
 			    }
 			    
+			   retpath = modspath;
 			    text.setText(modspath);
 			}
 		});
@@ -158,6 +170,9 @@ public class Window {
 		btnGenerateList.setText("Generate List");
 		
 		Label lblVisitOnGithub = new Label(shlModfirmHelper, SWT.NONE);
+		Display display = Display.getDefault();
+		org.eclipse.swt.graphics.Cursor cursor = new Cursor(display, SWT.CURSOR_HAND);
+	    lblVisitOnGithub.setCursor(cursor);
 		lblVisitOnGithub.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseDown(MouseEvent e) {
@@ -191,5 +206,9 @@ public class Window {
 			return null;
 		}
 
+	}
+	
+	public static String Path() {
+		return retpath;
 	}
 }
