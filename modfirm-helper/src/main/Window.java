@@ -30,7 +30,8 @@ import org.eclipse.wb.swt.SWTResourceManager;
 public class Window {
 
 	protected Shell shlModfirmHelper;
-	public static String retpath;
+	private static String retpath;
+	private static String devpath;
 	private Text text;
 
 	/**
@@ -38,12 +39,18 @@ public class Window {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		
+		//check if paths files exist
+		
+		
+		
 		try {
 			Window window = new Window();
 			window.open();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
 	}
 
 	/**
@@ -131,6 +138,7 @@ public class Window {
 			    	outputpath = GetClientModPath(".mf").toString();
 			    }
 			    
+			    devpath = outputpath;
 			    text2.setText(outputpath);
 			}
 		});
@@ -202,13 +210,48 @@ public class Window {
 			Path path = Paths.get(appDirs.getUserDataDir(".modfirm", "dev", null, true));
 			new File(path.toString()).mkdirs();//create folder if it doesnt exist.
 			return path;
+		} else if (what == "config") {
+			Path path = Paths.get(appDirs.getUserDataDir(".modfirm", null, null, true));
+			new File(path.toString()).mkdirs();//create folder if it doesnt exist.
+			return path;
 		} else {
 			return null;
 		}
 
 	}
 	
-	public static String Path() {
+	private void WriteToTxt() {
+		try {
+		      File myObj = new File("paths.txt");
+		      if (myObj.createNewFile()) {
+		        System.out.println("File created: " + myObj.getName());
+		      } else {
+		        System.out.println("File already exists. Reading that instead");
+		      }
+		    } catch (IOException e) {
+		      System.out.println("An error occurred.");
+		      e.printStackTrace();
+		    }
+	}
+	
+	//Complete
+	private boolean CheckIfConfigExists() {
+		File f = new File(GetClientModPath("config").toString() + "/config.txt");
+		if(f.exists()) { 
+		   return true;
+		} else {
+			return false;
+		}
+	}
+	
+	
+	//-----PUBLIC-RETURNS------
+	
+	public static String GetModPath() {
 		return retpath;
+	}
+	
+	public static String GetDevPath() {
+		return devpath;
 	}
 }

@@ -13,7 +13,7 @@ import org.eclipse.swt.events.MouseEvent;
 
 public class ProcessBar {
 
-	protected Shell shlApplicationName = new Shell();
+	protected static Shell shlApplicationName = new Shell();
 
 
 	public static void main(String[] args) {
@@ -27,7 +27,8 @@ public class ProcessBar {
 
 	public void open() {
 		Display display = Display.getDefault();
-		prelaunch();
+//		prelaunch();
+		smallContents();
 		shlApplicationName.open();
 		shlApplicationName.layout();
 		while (!shlApplicationName.isDisposed()) {
@@ -38,13 +39,36 @@ public class ProcessBar {
 	}
 	
 	Label lblGeneratingWhat = new Label(shlApplicationName, SWT.NONE);
-	ProgressBar progressBar = new ProgressBar(shlApplicationName, SWT.NONE);
+	static ProgressBar progressBar = new ProgressBar(shlApplicationName, SWT.NONE);
 	Button btnCancel = new Button(shlApplicationName, SWT.NONE);
 	Text text = new Text(shlApplicationName, SWT.BORDER | SWT.V_SCROLL);
 	
 	Button btnLogs = new Button(shlApplicationName, SWT.NONE);
 	private boolean logs = false;
 
+	
+	public static void updateBar(
+			int min,
+			int max,
+			boolean checkfornext,
+			int min2,
+			int max2
+			// no point in having more
+			) {
+		
+		int sum;
+		
+		if (!checkfornext) {
+			min2 = 0;
+			max2 = 0;
+		}
+		
+		sum = (max + max2) - (min + min2);
+		
+		progressBar.setSelection(sum);
+	}
+	
+	
 	private void prelaunch() {
 		
 		launch();
