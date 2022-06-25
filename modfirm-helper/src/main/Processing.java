@@ -10,18 +10,23 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.MessageDigest;
 
-public class Processing {
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URISyntaxException;
 
-	static String path = Window.Path();
+public class Processing {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		GenerateFileList();
+		GenerateFileList("mine");
 	}
 
 	
-	public static void GenerateFileList() {
-		Window.Path();
+	public static void GenerateFileList(String _Path) {
+		Path folder = _Path.toPath().toFile();
+		String pwdwdath = "hi";
+		
+		Path mine = pwdwdath.toString().to;
 		
 	}
 	

@@ -140,6 +140,7 @@ public class Window {
 			    
 			    devpath = outputpath;
 			    text2.setText(outputpath);
+			    //note to self, get value from text box instead when generating hash
 			}
 		});
 		btnBrowse2.setText("Browse");
