@@ -1,5 +1,7 @@
 # Modfirm
 
+# NOTE: This mod is currently being ported to Minecraft GMI which you can find in my recent repositories.
+
 Keep your players updated to the latest mods for your server automatically! 
 
 **What I'm Developing**
